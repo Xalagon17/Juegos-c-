@@ -12,7 +12,7 @@ bool RevisarV(int,int,char);
 bool RevisarD(int,int, char);
 bool RevDiagInvertida(int,int,char);
 
-char t[6][7]={' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
+char tablero[6][7]={' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
 
              {' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
 
