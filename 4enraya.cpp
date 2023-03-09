@@ -12,24 +12,24 @@ bool RevisarV(int,int,char);
 bool RevisarD(int,int, char);
 bool RevDiagInvertida(int,int,char);
 
-char tablero[6][7]={' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
+char tablero[6][7]={{' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
 
              {' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
 
              {' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
 
              {' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
-
+                   }
              {' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
 
-             {' '},{' '},{' '},{' '},{' '},{' '},{' '},; 
+             {' '},{' '},{' '},{' '},{' '},{' '},{' '},}; 
 
               
 
-char eleccion; 
+int e; 
 char turno; 
 int colT,colD,indD,h,k;
-int contador= 0
+int cont= 0
 bool listo = false;
 
 int main(){ 
@@ -46,9 +46,9 @@ int main(){
 
         cout<<" Pulse el número de la opción que desea hacer: "; 
 
-        cin>>eleccion; 
+        cin>>e; 
 
-    switch(eleccion){ 
+    switch(e){ 
 
 case '1': 
 
@@ -70,7 +70,7 @@ default:
 
     cout<<" Esta opción no existe. Pulse cualquier carácter para continuar: "; 
 
-    cin>>eleccion; 
+    cin>>e; 
 
     break; 
 
@@ -84,7 +84,7 @@ return 0;
 
 void Limpant(){ 
 
-if(system("clear"))== -1){ 
+if(system("clear") == -1){ 
 
     cout<<"Errror para limpiar la pantalla."<<endl; 
 
@@ -118,7 +118,7 @@ void Jugar(){
     Mostrartablero(); 
 if( RevisarH(indD,colD,turno) || RevisarV(indD,colD,turno) || RevisarD(indD,colD,turno) || RevDiagInvertida(indD,colD,turno)){
     cout<<"Ingrese cualquier caracter para seguir: "<<endl;
-    cin>>eleccion;
+    cin>>e;
     return;
 }
 
@@ -142,7 +142,7 @@ if( RevisarH(indD,colD,turno) || RevisarV(indD,colD,turno) || RevisarD(indD,colD
     if (colT>7 and colT<1)
     {
         cout<<"Esta columna no existe. Ingrese cualquier caracter para seguir: ";
-        cin>>eleccion;
+        cin>>e;
         Jugar();
     }
     else{
@@ -176,7 +176,7 @@ void Mostrartablero(){
 
 
 void Ubicarfich(){
-for(int f=0;f <6; f++){ 
+for(int i=0;i <6; i++){ 
 
         if (tablero[i][colD]==' ')
         {
