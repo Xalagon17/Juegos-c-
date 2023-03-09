@@ -12,24 +12,24 @@ bool RevisarV(int,int,char);
 bool RevisarD(int,int, char);
 bool RevDiagInvertida(int,int,char);
 
-char tablero[6][7]={{' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
+char tablero[6][7]={{{' '},{' '},{' '},{' '},{' '},{' '},{' '}}, 
 
-             {' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
+                    {{' '},{' '},{' '},{' '},{' '},{' '},{' '}}, 
 
-             {' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
+                    {{' '},{' '},{' '},{' '},{' '},{' '},{' '}}, 
 
-             {' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
-                   }
-             {' '},{' '},{' '},{' '},{' '},{' '},{' '}, 
+                    {{' '},{' '},{' '},{' '},{' '},{' '},{' '}}, 
+                   
+                    {{' '},{' '},{' '},{' '},{' '},{' '},{' '}}, 
 
-             {' '},{' '},{' '},{' '},{' '},{' '},{' '},}; 
+                    {{' '},{' '},{' '},{' '},{' '},{' '},{' '}},}; 
 
               
 
 int e; 
 char turno; 
 int colT,colD,indD,h,k;
-int cont= 0
+int cont= 0;
 bool listo = false;
 
 int main(){ 
@@ -50,7 +50,7 @@ int main(){
 
     switch(e){ 
 
-case '1': 
+case 1: 
 
     turno = '0'; 
 
@@ -60,7 +60,7 @@ case '1':
 
     break; 
 
-case '2': 
+case 2: 
 
     return 0; 
 
@@ -68,7 +68,7 @@ case '2':
 
 default: 
 
-    cout<<" Esta opción no existe. Pulse cualquier carácter para continuar: "; 
+    cout<<" Esta opción no existe. Pulse cualquier número para continuar: "; 
 
     cin>>e; 
 
@@ -135,11 +135,12 @@ if( RevisarH(indD,colD,turno) || RevisarV(indD,colD,turno) || RevisarD(indD,colD
         turno = 'X'; 
 
     } 
-
+    
+    cout<<endl;
     cout<<"Turno de "<<turno<<endl; 
     cout<<"Eliga en que columna quiere situarse: ";
     cin>>colT;
-    if (colT>7 and colT<1)
+    if (colT>=8 || colT<=0)
     {
         cout<<"Esta columna no existe. Ingrese cualquier caracter para seguir: ";
         cin>>e;
@@ -338,7 +339,7 @@ if (cont >= 4)
 return false;
  }
 
- bool Rev<RevDiagInvertida(int i, int j, char t){
+ bool RevDiagInvertida(int i, int j, char t){
     cont = 1;
 k=j;
 h=i;
